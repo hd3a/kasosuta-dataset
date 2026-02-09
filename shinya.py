@@ -35,7 +35,7 @@ for c in data.get("comments", []):
 
 # Streamlit UI
 st.title("Scratch コメント検索アプリ")
-
+st.write("Created by ncyo")
 user_q = st.text_input("ユーザー名で検索")
 text_q = st.text_input("内容で検索")
 
@@ -58,7 +58,11 @@ if st.button("検索"):
         page = st.number_input("ページ番号", min_value=1, max_value=total_pages, value=1)
         start = (page - 1) * page_size
         end = start + page_size
+
+        # 表示中を上に表示
+        st.write(f"表示中: {start+1} - {min(end, len(results))} / {len(results)}")
+
+        # コメント表示
         for c in results[start:end]:
             prefix = "↳ " if c["is_reply"] else ""
             st.write(f"{prefix}ID:{c['id']} [{c['datetime']}] {c['user']}: {c['content']}")
-        st.write(f"表示中: {start+1} - {min(end, len(results))} / {len(results)}")
