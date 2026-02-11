@@ -23,6 +23,12 @@ if st.button("鍵ペア生成"):
     )
 
     st.text_area("公開鍵（相手に渡す）", pub_bytes.decode(), height=200)
+    priv_bytes = private_key.private_bytes(
+    encoding=serialization.Encoding.PEM,
+    format=serialization.PrivateFormat.PKCS8,
+    encryption_algorithm=serialization.NoEncryption()
+    )
+    st.text_area("秘密鍵（絶対他人に渡すな）", priv_bytes.decode(), height=200)
 
 # --- 相手公開鍵入力 ---
 peer_pub_input = st.text_area("相手の公開鍵を貼って")
