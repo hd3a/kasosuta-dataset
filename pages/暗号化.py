@@ -7,7 +7,7 @@ from cryptography.hazmat.primitives.kdf.hkdf import HKDF
 from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 from cryptography.hazmat.backends import default_backend
 
-st.title("EC + ECDH + AES フル機能版")
+st.title("暗号化")
 
 # =========================
 # 鍵生成
