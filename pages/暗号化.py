@@ -6,7 +6,7 @@ from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
 import os
 import base64
 
-st.title("ECC 暗号フル版（圧縮公開鍵対応）")
+st.title("暗号")
 
 # -------------------------
 # 🔑 鍵生成
