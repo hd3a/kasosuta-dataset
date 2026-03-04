@@ -5,7 +5,7 @@ import json
 # JSON取得（キャッシュ）
 @st.cache_data
 def load_data():
-    url = "https://raw.githubusercontent.com/hd3a/kasosuta-dataset/refs/heads/main/scratch_shinya_all.json"
+    url = "https://raw.githubusercontent.com/22552/kasotest/refs/heads/main/result.json"
     r = requests.get(url)
     r.raise_for_status()
     return r.json()
